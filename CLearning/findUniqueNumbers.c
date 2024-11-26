@@ -26,8 +26,8 @@ For a detailed description see the detailed description in @ref xxxxx.h
 /* TYPES ******************************************************************************************/
 
 /* PROTOTYPES *************************************************************************************/
-static void findNonUnique(int numbersToCheck[MAX_INPUT_NUMBER]); /**<IN Function to find duplicate Numbers in test data. */
-static void findUnique(int numbersToCheck[MAX_INPUT_NUMBER]); /**<IN Function to find unique numbers in test data */
+static void findDuplicateNumbers(int numbersToCheck[MAX_INPUT_NUMBER]); /**<IN Function to find duplicate Numbers in test data. */
+static void findUniqueNumbers(int numbersToCheck[MAX_INPUT_NUMBER]); /**<IN Function to find unique numbers in test data */
 /* VARIABLES **************************************************************************************/
 
 /* EXTERNAL FUNCTIONS *****************************************************************************/
@@ -37,19 +37,18 @@ extern void main(void)
     int numbersToCheck[MAX_INPUT_NUMBER] = {5, 7, 1, 5, 2, 5, 6, 8}; 
 
     /* Call function to find uniqe numbers*/
-    findUnique(numbersToCheck);
+    findUniqueNumbers(numbersToCheck);
 
     /* Call function to find non uniqe numbers*/
-    findNonUnique(numbersToCheck);
+    findDuplicateNumbers(numbersToCheck);
 }
 /* INTERNAL FUNCTIONS *****************************************************************************/
 
-static void findNonUnique(int numbersToCheck[MAX_INPUT_NUMBER])
+static void findDuplicateNumbers(int numbersToCheck[MAX_INPUT_NUMBER]) /**<IN Function to find duplicate Numbers in test data. */
 {
     int countDuplicateNumbers = 0;
     bool foundNotUnique = false;
 
-    /* Compare List items*/
     for(int idx = 0; idx < MAX_INPUT_NUMBER; idx++)
     {
         /* Reset Flag befor compare */
@@ -69,7 +68,7 @@ static void findNonUnique(int numbersToCheck[MAX_INPUT_NUMBER])
                 break;
             }
         }
-        /*  */
+        /* Check for flag and print the duplicate values and count them  */
         if(foundNotUnique == true)
         {
             printf("Not unique: %d\n", numbersToCheck[idx]);
@@ -81,20 +80,19 @@ static void findNonUnique(int numbersToCheck[MAX_INPUT_NUMBER])
         }
 
     }
-
+    /* Print the counter of duplicate Numbers*/
     printf("\ncounter: %d\n", countDuplicateNumbers);    
 }
 
 /* Function to find unique numbers from test data */
-void findUnique(int numbersToCheck[MAX_INPUT_NUMBER])
+void findUniqueNumbers(int numbersToCheck[MAX_INPUT_NUMBER])/**<IN Function to find unique numbers in test data */
 {
     int countUniqueNumbers = 0;
     bool foundDuplicate = false;
 
-    /* iterate over array to check if numbers are not equal*/
     for(int idx = 0; idx < MAX_INPUT_NUMBER; idx++)
     {
-        /* inner loop to compare each element in array*/
+        /* Inner loop to compare each element in array*/
         for (int jdx = 0; jdx < MAX_INPUT_NUMBER; jdx++)
         {
             /* avoid checking self */
@@ -110,7 +108,7 @@ void findUnique(int numbersToCheck[MAX_INPUT_NUMBER])
             }
         }
 
-        /* check for flag and print the non unique values and count them */
+        /* Check for flag and print the non unique values and count them */
         if(foundDuplicate == false)
         {
             printf("Unique values: %d\n", numbersToCheck[idx]);
@@ -122,7 +120,7 @@ void findUnique(int numbersToCheck[MAX_INPUT_NUMBER])
         }
         
     }
-    /* print the counter for unique numbers */
+    /* Crint the counter for unique numbers */
     printf("\ncounter: %d\n", countUniqueNumbers);
     
 }

@@ -2,7 +2,8 @@
     "files.associations": {
         "stdio.h": "c",
         "typeinfo": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdlib.h": "c"
     },
 
     "code-runner.executorMap": {
