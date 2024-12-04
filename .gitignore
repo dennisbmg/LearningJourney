@@ -1,2 +1,3 @@
-# ignore input.txt files
+# ignore input.txt files and all txt files
+*.txt
 input.txt
