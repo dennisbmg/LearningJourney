@@ -4,3 +4,7 @@ input.txt
 
 #ignore all python notebook files
 *.ipynb 
+
+#ignore company templates
+CTemplate.c
+CTemplate.h
