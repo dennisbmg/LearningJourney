@@ -1,3 +1,6 @@
 # ignore input.txt files and all txt files
 *.txt
 input.txt
+
+#ignore all python notebook files
+*.ipynb 
